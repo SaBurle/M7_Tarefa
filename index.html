@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parquímetro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <div class="topo">
+            <button type="button" class="btn-tema" id="btn-tema">Tema: auto</button>
+        </div>
+
+        <h1>Parquímetro</h1>
+        <p class="subtitulo">Insira o saldo, escolha o tempo e inicie. Máximo de 120 min.</p>
+
+        <ol>
+            <li>
+                Saldo
+                <div class="linha-saldo">
+                    <p class="caixa-saldo">Saldo disponível <strong id="saldo">R$ 0,00</strong></p>
+                    <form class="inserir" onsubmit="formulario.inserirSaldo(); return false;">
+                        <label for="valorSaldo">Inserir saldo</label>
+                        <input type="number" id="valorSaldo" placeholder="Valor a inserir" min="0" step="0.01">
+                        <button type="submit" class="btn">Inserir</button>
+                    </form>
+                </div>
+            </li>
+
+            <li>
+                Escolher tempo
+                <div class="opcoes" id="opcoes"></div>
+                <p id="mensagem" class="mensagem" role="status"></p>
+            </li>
+
+            <li>
+                Confirmar compra
+                <button type="button" class="btn btn-iniciar" onclick="formulario.iniciar()">INICIAR</button>
+            </li>
+
+            <li>
+                Tempo disponível
+                <div class="linha-tempo">
+                    <p class="tempo"><strong id="tempoDisponivel">0</strong> min</p>
+                    <button type="button" class="btn btn-secundario" onclick="formulario.finalizar()">Finalizar</button>
+                </div>
+            </li>
+        </ol>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
